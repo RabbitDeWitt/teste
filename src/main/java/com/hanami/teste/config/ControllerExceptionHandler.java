@@ -20,13 +20,13 @@ public class ControllerExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(exception);
     }
     @ExceptionHandler(EntityNotFoundException.class)
-    public ResponseEntity teste3(EntityNotFoundException e){
+    public ResponseEntity postNotFoundException(EntityNotFoundException e){
         ExceptionDTO exception = new ExceptionDTO(e.getMessage());
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exception);
     }
 
     @ExceptionHandler(InvalidFieldExcpection.class)
-    public  ResponseEntity invalidFields(InvalidFieldExcpection e){
+    public  ResponseEntity invalidFieldsException(InvalidFieldExcpection e){
         ExceptionDTO exception = new ExceptionDTO(e.getMessage());
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(exception);
     }
